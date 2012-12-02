@@ -27,7 +27,6 @@ class WelcomeController < ApplicationController
     data = data.parsed_response
     session[:account] = data["account"]
     session[:access_token] = data["access_token"]
-    session[:facebook_data] = data
     redirect_to "/"
   end
   
