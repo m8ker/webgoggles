@@ -8,6 +8,7 @@ Webgoggles::Application.routes.draw do
   end
 
   get "login", :to => 'welcome#login'
+  get "logout", :to => 'welcome#logout'
   get "auth", :to => 'welcome#auth'
 
   # The priority is based upon order of creation:
