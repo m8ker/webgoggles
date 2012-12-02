@@ -69,15 +69,43 @@ body {
         text-transform:uppercase;
 }
 .gridify {
-        overflow:hidden;
         background:#fff;
+        overflow:hidden;
+        position:relative;
 }
 .gridify .content {
         padding:10px 0;
+        position:relative;
         min-width:2000px;
         margin-left:1%;
         margin-top:5px;
 }
+.controls {
+        position:absolute;
+        top:0;
+        width:100%;
+        height:100%;
+}
+.controls a {
+        position: absolute;
+        top: 39%;
+        font-size: 130px;
+        color: white;
+        background: rgba(255, 255, 255, 0.2);
+        display: block;
+        line-height: 1em;
+        padding: 0 8px;
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.controls a.left {
+        left:5px;
+        opacity:0.5;
+}
+.controls a.right {
+        right:5px;
+        left:auto;
+}
+
 .image img {
         max-width:100%;
 }
@@ -229,8 +257,8 @@ body {
 }
 
 #log_in {
-  margin-top: 26px; 
-  font-size: .9em; 
+        margin-top: 26px; 
+        font-size: .9em; 
 }
 
 #logged_in_as {
@@ -362,14 +390,14 @@ button img {
         height: 175px;
         padding: 15px 30px;
 }
-        .pitch_div p {
-                font-family:Helvetica;
-                font-size:20px;
-                color:white;
-                line-height:1.4em;
-                font-weight:400;
-                -webkit-font-smoothing:antialiased;
-        }
+.pitch_div p {
+        font-family:Helvetica;
+        font-size:20px;
+        color:white;
+        line-height:1.4em;
+        font-weight:400;
+        -webkit-font-smoothing:antialiased;
+}
 
 .form_div {
         float: left;

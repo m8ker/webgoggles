@@ -24,11 +24,31 @@ $(document).ready(function() {
                         $(this).find('.info').animate({"opacity":'0'}, 300);
                 }
         );
-        var width = $('.hometile').width();
-        $(".hometile").css({
-          "height": width
+        
+
+        var documentWidth = $(document).width();
+        var content_x = $('.content').position().left;
+
+        $('.controls').mousemove(function(event) {
+                var next = $(this).find('.right');
+                var previous = $(this).find('.left');
+                var target = $(this).closest('.gridify').find('.content');
+
+                var scroll_right = false;
+                var active_zone = next.position().left - ( documentWidth * 0.25 );
+
+                if (! scroll_right && event.pageX > active_zone) {
+                        scroll_right = true;
+                        content_x = content_x - 1;
+                        console.log(content_x);
+                        target.css({
+                                'margin-left': content_x,
+                        });
+                }
         });
-        console.log(width);
+
+
+
 });
 
 
