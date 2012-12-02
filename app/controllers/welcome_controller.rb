@@ -2,13 +2,7 @@ require 'httparty'
 
 class WelcomeController < ApplicationController
   def index
-    @friends = []
-    @logged_in = true
-    if session['access_token']
-      @friends = HTTParty.get("#{SINGLY_API_BASE}/friends/facebook", :query => {:sort => "photos" , :access_token => session['access_token']}).parsed_response
-    else
-      @logged_in = false
-    end
+    @friends = Singly::Facebook.friends(session['access_token'])
   end
   
   def login

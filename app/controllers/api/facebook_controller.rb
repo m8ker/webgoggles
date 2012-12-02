@@ -2,10 +2,11 @@ require 'httparty'
 
 class Api::FacebookController < ApplicationController
   def friends
-    friends = []
-    if session['access_token']
-      friends = HTTParty.get("#{SINGLY_API_BASE}/friends/facebook", :query => {:sort => "photos" , :access_token => session['access_token']}).parsed_response
-    end
+    #friends = []
+    #if session['access_token']
+    #  friends = HTTParty.get("#{SINGLY_API_BASE}/friends/facebook", :query => {:sort => "photos" , :access_token => session['access_token']}).parsed_response
+    #end
+    friends = Singly::Facebook.friends(session['access_token'], {:offset => params[:offset]})
     render :text => friends.to_json
   end
 
