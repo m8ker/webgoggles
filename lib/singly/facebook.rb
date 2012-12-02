@@ -7,6 +7,12 @@ module Singly
       return quick_call("profiles/facebook", query, token)
     end
     
+    def self.photos_for(token, participants = [], opts = {})
+      parts = participants.collect{|part| "^#{part}"}.join(",")
+      query = {:query => {:participants => parts, :access_token => token}.merge(opts)}
+      return quick_call("friends/facebook", query, token)
+    end
+    
     def self.friends(token, opts = {})
       query = {:query => {:sort => "photos", :access_token => token}.merge(opts)}
       return quick_call("friends/facebook", query, token)
