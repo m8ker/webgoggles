@@ -2,6 +2,11 @@ module Singly
 
   class Facebook
     
+    def self.me(token, opts = {})
+      query = {:query => {:access_token => token}.merge(opts)}
+      return quick_call("profiles/facebook", query, token)
+    end
+    
     def self.friends(token, opts = {})
       query = {:query => {:sort => "photos", :access_token => token}.merge(opts)}
       return quick_call("friends/facebook", query, token)
