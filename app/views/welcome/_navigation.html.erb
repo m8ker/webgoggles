@@ -19,10 +19,10 @@
           </li><% end %>
       <li class="pull-right">
         <div id="log_container">
-          <% if @logged_in %>
+          <% if !@friends.nil? %>
             <div id="log_out"><a href="/logout">Logout</a></div>
           <% else %>
-            <div id="log_in"><a href="/login">Login</a></div>
+            <div id="log_in"><a href="https://api.singly.com/oauth/authenticate?client_id=28d73ba2e4eac68eff50c8856d9e2c8f&redirect_uri=#{Singly.auth_callback}&service=facebook">Login</a></div>
           <% end %>
         </div>  
       <li class="pull-right">
