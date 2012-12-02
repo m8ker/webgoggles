@@ -203,3 +203,10 @@
 </div>
 <div class="clearfix"></div>
 
+
+<% if @logged_in %>
+  <%= render :partial => "friends" %>
+<% else %>
+  Log in Button here
+<% end %>
+
