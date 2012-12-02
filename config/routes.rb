@@ -4,6 +4,7 @@ Webgoggles::Application.routes.draw do
     get "facebook/friends"
     get "facebook/messages"
     get "facebook/photos"
+    get "facebook/all_friends"
   end
 
   get "login", :to => 'welcome#login'
