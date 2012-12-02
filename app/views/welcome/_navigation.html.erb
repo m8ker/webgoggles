@@ -17,16 +17,18 @@
             </ul>
           </div><!-- /btn-group -->
           </li><% end %>
-      <li class="pull-right">
-        <div id="log_container">
           <% if @logged_in %>
-            <div id="log_out"><a href="/logout">Logout</a></div>
+          <li class="pull-right">
+          <div id="log_container">
+            <div id="logged_in_as">Logged in as</div>
+              <div id="user_name">User Name</div>
+          </div>
+          </li>
+          <li><div id="log_out"><a href="/logout">Logout</a></div></li>
           <% else %>
-            <div id="log_in"><a href="/login">Login</a></div>
+            <li><div id="log_in"><a href="https://api.singly.com/oauth/authenticate?client_id=28d73ba2e4eac68eff50c8856d9e2c8f&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&service=facebook">Facebook Login</a></div></li>
           <% end %>
         </div>  
-      <li class="pull-right">
-      </li> 
       </ul>
     </div>
   </div>
