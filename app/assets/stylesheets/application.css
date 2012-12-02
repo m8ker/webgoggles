@@ -293,7 +293,7 @@ button img {
 }
 .tiled .wrap {
         position:absolute;
-        margin-top:-80px;
+        margin-top:0;
         width:2002px;
         left:50%;
         margin-left:-1026px;
@@ -311,7 +311,7 @@ button img {
         position: absolute;
         width: 1024px;
         margin-left: -510px;
-        top: 179px;
+        top: 259px;
         left: 50%;
 }
 
