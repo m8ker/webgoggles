@@ -200,7 +200,7 @@ body {
  */
 
 .margin-top {
-        margin-top:100px;
+        margin-top:0px;
         position:relative;
 }
 .hidden {
@@ -230,7 +230,7 @@ body {
 }
 
 #logged_in_as {
-  font-size: .7em;
+  font-size: .8em;
   width: 100%;
   color: white;
 }
@@ -238,14 +238,30 @@ body {
 #log_out {
   margin-top: 22px;
   margin-left: 10px;
-  font-size: .7em;
+  font-size: .8em;
   width: 100%;
 }
 
+#log_out a {
+    color: gray;
+  }
+  
 #user_name {
   padding: 0px;
   width: 100%;
   color: white;
   font-size: 1.2em;
   font-weight: bold;
+}
+
+button img {
+  width: 80px;
+}
+
+.caret {
+  margin-top: 13px;
+}
+
+.goggle_button {
+  margin-right: 15px;
 }
