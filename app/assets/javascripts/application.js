@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require_tree ./vendor
 //= require_tree .
+
+$(document).ready(function() {
+        $('.block').hover(
+                function() {
+                        $(this).find('.actions').show('fast');
+                },
+                function() {
+                        $(this).find('.actions').hide('fast');
+                }
+        );
+});
