@@ -4,6 +4,7 @@ Webgoggles::Application.routes.draw do
     get "facebook/friends"
     get "facebook/messages"
     get "facebook/photos"
+    get "facebook/feed"
     get "facebook/all_friends"
   end
 
