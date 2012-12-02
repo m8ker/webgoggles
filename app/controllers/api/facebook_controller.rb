@@ -13,7 +13,7 @@ class Api::FacebookController < ApplicationController
     friends = []
     if session['access_token']
       count = HTTParty.get("#{SINGLY_API_BASE}/friends", :query => {:access_token => session['access_token']}).parsed_response
-      puts [count["facebook"].inspect, "freinds"].join(" ")
+      puts [count["facebook"].inspect, "friends"].join(" ")
       i = 0
       
       (count["facebook"].to_i/20).times do |i|

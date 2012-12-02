@@ -13,6 +13,11 @@ class WelcomeController < ApplicationController
   
   def login
   end
+
+  def logout
+    reset_session
+    redirect_to "/"
+  end
   
   def auth
     data = HTTParty.post("https://api.singly.com/oauth/access_token", :body => {
@@ -22,6 +27,7 @@ class WelcomeController < ApplicationController
     data = data.parsed_response
     session[:account] = data["account"]
     session[:access_token] = data["access_token"]
+    session[:facebook_data] = data
     redirect_to "/"
   end
   

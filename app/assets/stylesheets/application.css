@@ -15,7 +15,6 @@
 body {
         background:#F6F5F4 url(/img/bgnoise.png);
         min-height:2000px;
-        padding-top:100px;
 }
 .container-fluid {
         padding:0;
@@ -72,8 +71,6 @@ body {
 .gridify {
         overflow:hidden;
         background:#fff;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
-        margin-bottom:30px;
 }
         .gridify .content {
                 padding:10px 0;
@@ -131,7 +128,7 @@ body {
         }
                 
 .profile {
-        border-bottom:1px solid #eee;
+        border-bottom:1px solid #ccc;
         padding:10px;
 }
         .profile .actions {
@@ -147,17 +144,18 @@ body {
                 width:auto;
         }
         .profile .image {
-                border:4px solid #fff;
-                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-                height:40px;
                 float:left;
+                height:60px;
                 margin-right:10px;
                 margin-bottom:5px;
+                margin-left:12px;
+                margin-top:5px;
                 overflow:hidden;
                 position:relative;
-                width:40px;
+                width:60px;
         }
                 .profile .image img {
+                        border-radius:8px;
                         max-width:none;
                         max-height:100%;
                 }
@@ -172,7 +170,7 @@ body {
                 float:left;
                 font-weight: 300;
                 line-height: 1em;
-                margin: 7px 10px 0 0;
+                margin: 30px 10px 0 0;
                 padding: 5px;
         }
         .block.text {

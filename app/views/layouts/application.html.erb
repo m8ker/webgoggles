@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>WebGoggl.es</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div class="container-fluid">
-      <%= yield %>
-    </div>
-    <%= javascript_include_tag "application" %>
-  </body>
+<head>
+  <title>WebGoggl.es</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container-fluid">
+    <%= render :partial => "navigation" %>
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag "application" %>
+</body>
 </html>
