@@ -24,4 +24,16 @@ $(document).ready(function() {
                         $(this).find('.info').animate({"opacity":'0'}, 300);
                 }
         );
+        var width = $('.hometile').width();
+        $(".hometile").css({
+          "height": width
+        });
+        console.log(width);
+});
+
+$(window).resize(function () { 
+  var width = $('.hometile').width();
+  $(".hometile").css({
+    "height": width
+  }); 
 });

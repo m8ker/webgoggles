@@ -3,6 +3,7 @@
     <a class="brand" href="/"><img src="img/webgoggleslogo.png"></a>
     <div class="pull-right">
       <ul class="nav">
+        <% if @logged_in %>
         <li class="pull-right">
           <!-- FB btn-group -->
           <div class="pull-right btn-group goggle_button">
@@ -15,7 +16,7 @@
               <li><a href="#">Yelp</a></li>
             </ul>
           </div><!-- /btn-group -->
-          </li>
+          </li><% end %>
       <li class="pull-right">
         <div id="log_container">
           <% if @logged_in %>
