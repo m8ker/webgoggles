@@ -224,6 +224,9 @@ body {
         padding-top: 20px;
 }
 
+#pic {
+  float: left;
+}
 .brand img {
   width: 300px;
 }
@@ -255,6 +258,7 @@ body {
 }
 
 #user_name {
+  float: left;
         padding: 0px;
         width: 100%;
         color: white;
