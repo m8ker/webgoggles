@@ -31,6 +31,7 @@ $(document).ready(function() {
         console.log(width);
 });
 
+
 $(window).resize(function () { 
   var width = $('.hometile').width();
   $(".hometile").css({
