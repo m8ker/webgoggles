@@ -228,6 +228,11 @@ body {
         margin-top: 9px;
 }
 
+#log_in {
+  margin-top: 26px; 
+  font-size: .9em; 
+}
+
 #logged_in_as {
         font-size: .8em;
         width: 100%;

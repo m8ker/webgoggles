@@ -2,6 +2,7 @@ require 'httparty'
 
 class WelcomeController < ApplicationController
   def index
+    @me = Singly::Facebook.me(session['access_token'])
     @friends = Singly::Facebook.friends(session['access_token'])
   end
   
