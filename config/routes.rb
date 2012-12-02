@@ -1,5 +1,13 @@
 Webgoggles::Application.routes.draw do
-  get "welcome/index"
+  
+  namespace :api do
+    get "facebook/friends"
+    get "facebook/messages"
+    get "facebook/photos"
+  end
+
+  get "login", :to => 'welcome#login'
+  get "auth", :to => 'welcome#auth'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
