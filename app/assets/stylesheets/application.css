@@ -128,7 +128,7 @@ body {
         }
                 
 .profile {
-        border-bottom:1px solid #ccc;
+        border-bottom:2px solid #eee;
         padding:10px;
 }
         .profile .actions {
@@ -245,8 +245,6 @@ body {
   font-size: 1.2em;
   font-weight: bold;
 }
-<<<<<<< HEAD
-=======
 
 button img {
   width: 80px;
@@ -268,5 +266,3 @@ padding-bottom: 11px;
 padding-left: 15px;
 }
 
-
->>>>>>> 42243313f4d9304d670c5bb2f1bb86224d5140ae
