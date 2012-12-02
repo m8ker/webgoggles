@@ -1,8 +1,9 @@
 <div class="navbar navbar-inverse">
   <div class="navbar-inner">
-    <a class="brand" href="/"><img src="img/webgoggleslogo.png"></a>
+    <a class="brand" href="/"><img src="img/webgoggleslogo_large.png"></a>
     <div class="pull-right">
       <ul class="nav">
+        
         <% if !@friends.nil? %>
         <li class="pull-right">
           <!-- FB btn-group -->
@@ -16,17 +17,17 @@
               <li><a href="#">Yelp</a></li>
             </ul>
           </div><!-- /btn-group -->
-          </li><% end %>
+        </li><% end %>
+        
         <div id="log_container">
           <% if !@friends.nil? %>
             <li class="pull-right">
-            <div id="log_out"><a href="/logout">Logout</a></div>
+              <div id="log_out"><a href="/logout">Logout</a></div>
             </li>
             <li class="pull-right">
-            <div id="log_container">
-              <div id="logged_in_as">Logged in as</div>
-              <div id="user_name"><img src="<%= @me["data"]["picture"]["data"]["url"] %>"><%= @me["data"]["name"] %></div>
-            </div>
+              <div id="log_container">
+                <div id="pic"><img src="<%= @me["data"]["picture"]["data"]["url"] %>"></div><div id="user_name"><div id="logged_in_as">Logged in as</div><%= @me["data"]["name"] %></div>
+              </div>
             </li>
           <% else %>
             <li class="pull-right">

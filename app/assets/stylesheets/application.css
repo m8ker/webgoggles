@@ -224,6 +224,9 @@ body {
   padding-top: 20px;
 }
 
+.brand img {
+  width: 300px;
+}
 #log_container {
   margin-top: 9px;
 }
@@ -234,6 +237,7 @@ body {
 }
 
 #logged_in_as {
+  float: right;
   font-size: .8em;
   width: 100%;
   color: white;
