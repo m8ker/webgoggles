@@ -1,10 +1,11 @@
 <div class="navbar navbar-inverse">
   <div class="navbar-inner">
-    <a class="brand" href="/"><img src="img/webgoggleslogo.png"></a>
+    <a class="brand" href="/"><img src="img/webgoggleslogo_large.png"></a>
     <div class="pull-right">
       <ul class="nav">
+        
         <% if !@friends.nil? %>
-        <li class="pull-right">
+        <li>
           <!-- FB btn-group -->
           <div class="pull-right btn-group goggle_button">
             <button class="btn btn-inverse btn-large"><img src="img/fb.png"></button>
@@ -16,20 +17,35 @@
               <li><a href="#">Yelp</a></li>
             </ul>
           </div><!-- /btn-group -->
-          </li><% end %>
-        <div id="log_container">
+        </li><% end %>
+        
+        
+     
+    
           <% if !@friends.nil? %>
-            <li class="pull-right">
-            <div id="log_out"><a href="/logout">Logout</a></div>
-            </li>
-            <li class="pull-right">
-            <div id="log_container">
-              <div id="logged_in_as">Logged in as</div>
-              <div id="user_name"><img src="<%= @me["data"]["picture"]["data"]["url"] %>"><%= @me["data"]["name"] %></div>
-            </div>
-            </li>
+                 
+                <li><div id="pic"><img src="<%= @me["data"]["picture"]["data"]["url"] %>"></div></li>
+                   <li>
+                    <div id="log_container">
+                      <div id="logged_in_as">Logged in as</div>
+                      <div id="user_name"><%= @me["data"]["name"] %></div>
+                    </div>
+                  </li>
+              <li><div id="log_out">    <!-- FB btn-group -->
+                  <div class="pull-right btn-group goggle_button">
+                    <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><span class="icon-user icon-white"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Friends</a></li>
+                      <li><a href="#">Groups</a></li>
+                      <li><a href="#">Pics Only</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Log Out</a></li>
+                    </ul>
+                  </div><!-- /btn-group --></div></li>   
+                 
+                    
           <% else %>
-            <li class="pull-right">
+            <li>
             <div id="log_in"><a href="https://api.singly.com/oauth/authenticate?client_id=28d73ba2e4eac68eff50c8856d9e2c8f&redirect_uri=<%= Singly.auth_callback %>&service=facebook">Login</a></div></li>
           <% end %>
         </div>  
