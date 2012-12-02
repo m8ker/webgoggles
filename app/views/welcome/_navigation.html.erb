@@ -20,16 +20,20 @@
         </li><% end %>
         
         
-        <li>
-        <div id="log_container">
+     
+    
           <% if !@friends.nil? %>
                  
-                <div id="pic"><img src="<%= @me["data"]["picture"]["data"]["url"] %>"></div>
-                  <div id="log_container">
-                  <div id="logged_in_as">Logged in as</div>
-                  <div id="user_name"><%= @me["data"]["name"] %></div>
-                </div>
-                 <li><div id="log_out"><a href="/logout">Logout</a></div></li>    
+                <li><div id="pic"><img src="<%= @me["data"]["picture"]["data"]["url"] %>"></div></li>
+                   <li>
+                    <div id="log_container">
+                      <div id="logged_in_as">Logged in as</div>
+                      <div id="user_name"><%= @me["data"]["name"] %></div>
+                    </div>
+                  </li>
+              <li><div id="log_out"><a href="/logout">Logout</a></div></li>   
+                 
+                    
           <% else %>
             <li>
             <div id="log_in"><a href="https://api.singly.com/oauth/authenticate?client_id=28d73ba2e4eac68eff50c8856d9e2c8f&redirect_uri=<%= Singly.auth_callback %>&service=facebook">Login</a></div></li>
