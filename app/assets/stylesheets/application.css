@@ -442,4 +442,8 @@ form {
         }
 }
 
-
+.m_icons img {
+  margin-right: 7px;
+  margin-top: 43px;
+  height: 20px;
+}
