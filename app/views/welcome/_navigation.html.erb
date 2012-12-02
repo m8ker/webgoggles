@@ -18,11 +18,13 @@
           </li>
       <li class="pull-right">
         <div id="log_container">
-          <div id="logged_in_as">Logged in as</div>
-          <div id="user_name">User Name</div>
+          <% if @logged_in %>
+            <div id="log_out"><a href="/logout">Logout</a></div>
+          <% else %>
+            <div id="log_in"><a href="/login">Login</a></div>
+          <% end %>
         </div>  
       <li class="pull-right">
-        <div id="log_out"><a href="#">Logout</a></div>
       </li> 
       </ul>
     </div>
