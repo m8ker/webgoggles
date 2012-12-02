@@ -10,10 +10,10 @@
 
   </div>
   <div class="span12 content">
-    <% (1..6).each do |i| %>
+    <% @photos[friend["services"]["facebook"]["id"]].each do |photo| %>
     <div class="block">
       <div class="main">
-        <img class="" src="/img/samples/1.jpg"/>
+        <img class="" src="<%= photo["data"]["source"] %>"/>
       </div>
       <div class="info">
         <div class="pull-right actions">
@@ -23,6 +23,31 @@
         <p class="small">Some description / meta</p>
       </div>
     </div>
+    <% end %>
+    
+    <% @statuses[friend["services"]["facebook"]["id"]].each do |status| %>
+        <% next unless status[0] == "data" %>
+        <% status[1].each do |post| %>
+        <div class="block">
+          <div class="main">
+          <% if post["story"] %>
+            <p><%= post["story"] %></p>
+          <% elsif post["link"] %>
+            <p>Shared a link: <a href="<%= post["link"] %>"><%= post["name"] %></a>
+            <br/><img src="<%= post["picture"] %>" /></p>
+          <% elsif post["message"] %>
+            <p>Wrote: <%= post["message"] %></p>
+          <% end %>
+          </div>
+          <div class="info">
+            <div class="pull-right actions">
+              <a class="btn btn-mini" href="#">21 <i class="icon icon-thumbs-up"></i></a>
+              <a class="btn btn-mini" href="#">6 <i class="icon icon-comment"></i></a>
+            </div>
+            <p class="small">Some description / meta</p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
