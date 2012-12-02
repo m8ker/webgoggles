@@ -26,7 +26,9 @@
             </li>
             <li class="pull-right">
               <div id="log_container">
-                <div id="pic"><img src="<%= @me["data"]["picture"]["data"]["url"] %>"></div><div id="user_name"><div id="logged_in_as">Logged in as</div><%= @me["data"]["name"] %></div>
+                <div id="pic"><img src="<%= @me["data"]["picture"]["data"]["url"] %>"></div>
+                <div id="logged_in_as">Logged in as</div>
+                <div id="user_name"><%= @me["data"]["name"] %></div>
               </div>
             </li>
           <% else %>
