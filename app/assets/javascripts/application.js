@@ -18,10 +18,10 @@
 $(document).ready(function() {
         $('.block').hover(
                 function() {
-                        $(this).find('.actions').show('fast');
+                        $(this).find('.actions').animate({"opacity":'1'}, 300);
                 },
                 function() {
-                        $(this).find('.actions').hide('fast');
+                        $(this).find('.actions').animate({"opacity":'0'}, 300);
                 }
         );
 });
