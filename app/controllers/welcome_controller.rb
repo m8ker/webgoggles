@@ -2,11 +2,13 @@ require 'httparty'
 
 class WelcomeController < ApplicationController
   def index
-    @me = Singly::Facebook.me(session['access_token'])
-    @friends = Singly::Facebook.friends(session['access_token'])
-    ids = @friends.collect{|f| f["services"]["facebook"]["id"] }
-    @photos = Singly::Facebook.photos_for(session['access_token'], ids)
-    @statuses = Singly::Facebook.statuses_for(session['access_token'], ids)
+    if session['access_token']
+      @me = Singly::Facebook.me(session['access_token'])
+      @friends = Singly::Facebook.friends(session['access_token'])
+      ids = @friends.collect{|f| f["services"]["facebook"]["id"] }
+      @photos = Singly::Facebook.photos_for(session['access_token'], ids)
+      @statuses = Singly::Facebook.statuses_for(session['access_token'], ids)
+    end
   end
   
   def login
