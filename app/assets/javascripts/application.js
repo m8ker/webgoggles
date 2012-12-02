@@ -29,7 +29,12 @@ $(document).ready(function() {
         var documentWidth = $(document).width();
         var content_x = $('.content').position().left;
 
-        $('.controls').mousemove(function(event) {
+        var scroll_left = false;
+
+        /*
+         * commenting out mouseover stuff for now
+         *
+         * $('.controls').mousemove(function(event) {
                 var next = $(this).find('.right');
                 var previous = $(this).find('.left');
                 var target = $(this).closest('.gridify').find('.content');
@@ -46,6 +51,38 @@ $(document).ready(function() {
                         });
                 }
         });
+        */
+
+        $('.controls a.right').click(function() {
+                var target = $(this).closest('.gridify').find('.content');
+                var content_left = target.offset().left;
+                var last = target.find('.block').last();
+                documentWidth = $(document).width();
+                if (last.position().left < documentWidth) {
+                        return false;
+                }
+                target.animate({
+                        "margin-left": content_left - (documentWidth * 0.99),
+                });
+
+                return false;
+        });
+        $('.controls a.left').click(function() {
+                var target = $(this).closest('.gridify').find('.content');
+                var content_left = target.offset().left;
+                var first = target.find('.block').first();
+                documentWidth = $(document).width();
+                if (first.position().left > 0) {
+                        console.log(first);
+                        return false;
+                }
+                target.animate({
+                        "margin-left": content_left + (documentWidth * 0.99),
+                });
+
+                return false;
+        });
+
 
 
 
