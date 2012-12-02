@@ -1,26 +1,5 @@
-<div class="row-fluid gridify">
-        <div class="span12 profile" style="margin-left:1%;padding-left:0;padding-bottom:5px">
-                <div class="image">
-                        <img src="/img/emily.jpg" />
-                </div>
-                <h2>Emily</h2>
-                <div class="actions">
-                        <a href="#" class="btn btn-mini btn-inverse"><i class="icon icon-envelope icon-white"></i></a>
-                </div>
-
-        </div>
-        <div class="span12 content">
-                <div class="block">
-                        <div class="main">
-                                <img class="img-rounded" src="/img/samples/1.jpg"/>
-                        </div>
-                        <div class="info">
-                                <div class="pull-right actions">
-                                        <a class="btn btn-mini" href="#">21 <i class="icon icon-thumbs-up"></i></a>
-                                        <a class="btn btn-mini" href="#">6 <i class="icon icon-comment"></i></a>
-                                </div>
-                                <p class="small">Some description / meta</p>
-                        </div>
-                </div>
-        </div>
-</div>
+<% if @logged_in %>
+  <%= render :partial => "friends" %>
+<% else %>
+  Log in Button here
+<% end %>

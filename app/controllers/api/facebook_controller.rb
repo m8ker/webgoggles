@@ -4,7 +4,7 @@ class Api::FacebookController < ApplicationController
   def friends
     friends = []
     if session['access_token']
-      friends = HTTParty.get("#{SINGLY_API_BASE}/friends/facebook", :query => {:access_token => session['access_token']}).parsed_response
+      friends = HTTParty.get("#{SINGLY_API_BASE}/friends/facebook", :query => {:sort => "photos" , :access_token => session['access_token']}).parsed_response
     end
     render :text => friends.to_json
   end
@@ -13,10 +13,14 @@ class Api::FacebookController < ApplicationController
     friends = []
     if session['access_token']
       count = HTTParty.get("#{SINGLY_API_BASE}/friends", :query => {:access_token => session['access_token']}).parsed_response
-      puts count["facebook"]
+      puts [count["facebook"].inspect, "freinds"].join(" ")
+      i = 0
       
-      friends = HTTParty.get("#{SINGLY_API_BASE}/friends/facebook", :query => {:access_token => session['access_token']}).parsed_response
+      (count["facebook"].to_i/20).times do |i|
+        friends += HTTParty.get("#{SINGLY_API_BASE}/friends/facebook", :query => {:access_token => session['access_token'], :offset => i * 20}).parsed_response 
+      end
     end
+    puts "FRIEND COUNT: #{friends.length}"
     render :text => friends.to_json
   end
 

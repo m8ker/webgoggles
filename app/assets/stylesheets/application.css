@@ -181,8 +181,6 @@ body {
 
 
 
-
-
 /*
  * helpers
  *
@@ -203,12 +201,45 @@ body {
         line-height: 1em;
         font-weight: 300;
 }
-.btn-mini {
+.btn.btn-mini {
         background:#fff;
-        border-color:#ccc;
+        border-color:#eee;
 }
-        .btn-mini i {
-                line-height:1.8em;
-                opacity:0.7;
+        .btn.btn-mini i {
                 margin-top:0;
+                opacity:0.7;
         }
+
+/*======Navbar======*/
+.navbar-inner {
+  min-height: 90px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  padding-top: 20px;
+}
+
+.navbar .nav {
+  margin-top: 5px;
+}
+
+#logged_in_as {
+  font-size: .7em;
+  width: 100%;
+  color: white;
+}
+
+#log_out {
+  margin-top: 22px;
+  margin-left: 10px;
+  font-size: .7em;
+  width: 100%;
+}
+
+#user_name {
+  padding: 0px;
+  width: 100%;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+}
