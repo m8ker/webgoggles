@@ -1,7 +1,6 @@
 <% if @friends.nil? %>
-  <a href="https://api.singly.com/oauth/authenticate?client_id=28d73ba2e4eac68eff50c8856d9e2c8f&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth&service=facebook">Log in</a> to see your Facebook feed differently.
+  <%= render :partial => "landing" %>
 <% else %>
-  welcome...
   <%= render :partial => "friends" %>
 <% end %>
  
