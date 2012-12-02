@@ -28,6 +28,19 @@ class Api::FacebookController < ApplicationController
   end
 
   def photos
+          photos = []
+          if session['access_token']
+                  photos = HTTParty.get("#{SINGLY_API_BASE}/types/photos_feed", :query => {:access_token => session['access_token']}).parsed_response
+          end
+          render :text => photos.to_json
+  end
+
+  def feed
+          updates = []
+          if session['access_token']
+                  updates = HTTParty.get("#{SINGLY_API_BASE}/types/all_feed", :query => {:access_token => session['access_token']}).parsed_response
+          end
+          render :text => updates.to_json
   end
   
   def profile

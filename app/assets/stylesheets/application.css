@@ -213,6 +213,7 @@ body {
 
 /*======Navbar======*/
 .navbar-inner {
+  box-shadow:0 0 10px #333;
   min-height: 70px;
   border-radius: 0;
   -webkit-border-radius: 0;
