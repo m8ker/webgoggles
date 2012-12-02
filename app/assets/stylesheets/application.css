@@ -76,7 +76,7 @@ body {
 .gridify .content {
         padding:10px 0;
         position:relative;
-        min-width:2000px;
+        min-width:10000px;
         margin-left:1%;
         margin-top:5px;
 }
@@ -206,7 +206,9 @@ body {
         background:rgba(255,255,255,0.1);
 }
 
-
+.row-fluid .span12 {
+        width: 100%;
+}
 
 /*
  * helpers
@@ -252,8 +254,31 @@ body {
         padding-top: 20px;
 }
 
+#pic {
+  overflow: hidden;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 17px;
+}
+
+#pic img {
+ height: 41px;  
+}
+
+.brand img {
+  width: 300px;
+}
+
+.navbar .brand {
+  padding: 2px 20px 10px;
+}
+
 #log_container {
-        margin-top: 9px;
+  margin-left: 7px;
+  margin-top: 9px;
 }
 
 #log_in {
@@ -262,16 +287,16 @@ body {
 }
 
 #logged_in_as {
-        font-size: .8em;
-        width: 100%;
-        color: white;
+  font-size: .8em;
+  width: 100%;
+  color: white;
 }
 
 #log_out {
-        margin-top: 31px;
-        margin-left: 10px;
-        font-size: .8em;
-        width: 100%;
+  margin-top: 12px;
+  margin-left: 8px;
+  font-size: .8em;
+  width: 100%;
 }
 
 #log_out a {
@@ -279,6 +304,7 @@ body {
 }
 
 #user_name {
+  float: left;
         padding: 0px;
         width: 100%;
         color: white;
@@ -293,10 +319,6 @@ button img {
 .caret {
         margin-top: 20px;
         color: white;
-}
-
-.goggle_button {
-        margin-right: 15px;
 }
 
 .btn-large {

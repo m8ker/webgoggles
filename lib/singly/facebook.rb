@@ -8,13 +8,25 @@ module Singly
     end
     
     def self.photos_for(token, participants = [], opts = {})
-      parts = participants.collect{|part| "^#{part}"}.join(",")
-      query = {:query => {:participants => parts, :access_token => token}.merge(opts)}
-      return quick_call("friends/facebook", query, token)
+      photos = {}
+      participants.each do |part|
+        query = {:query => {:participants => "^#{part}", :limit => 20, :access_token => token}.merge(opts)}
+        photos[part] = quick_call("types/photos_feed", query, token)
+      end
+      return photos
+    end
+    
+    def self.statuses_for(token, participants = [], opts = {})
+      statuses = {}
+      participants.each do |part|
+        query = {:query => {:access_token => token}.merge(opts)}
+        statuses[part] = quick_call("proxy/facebook/#{part}/feed", query, token)
+      end
+      return statuses
     end
     
     def self.friends(token, opts = {})
-      query = {:query => {:sort => "photos", :access_token => token}.merge(opts)}
+      query = {:query => {:sort => "photos", :limit => 8, :access_token => token}.merge(opts)}
       return quick_call("friends/facebook", query, token)
     end
     
